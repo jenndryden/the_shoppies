@@ -1,4 +1,7 @@
 import React, { useState } from "react";
+import '@shopify/polaris/dist/styles.css';
+import enTranslations from '@shopify/polaris/locales/en.json';
+import {AppProvider, Page, Card, Button} from '@shopify/polaris';
 
 
 const Search = (props) => {
@@ -20,12 +23,14 @@ const Search = (props) => {
 
   return (
       <form className="search">
+          <AppProvider i18n={enTranslations}>
         <input
           value={searchValue}
           onChange={handleSearchInputChanges}
           type="text"
         />
-        <input onClick={callSearchFunction} type="submit" value="SEARCH" />
+        <Button onClick={callSearchFunction} type="submit">Search</Button>
+        </AppProvider>
       </form>
     );
 }

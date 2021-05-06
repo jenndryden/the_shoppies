@@ -21,7 +21,6 @@ const Nominations = (props) => {
     <AppProvider i18n={enTranslations}>
             <div className="movie">
             <div className="moviecard">
-            <Card>
     <div className="movietext">
      <h1>{movie.Title}</h1>
       <p>({movie.Year})</p>
@@ -38,7 +37,6 @@ const Nominations = (props) => {
         onClick={() => props.handleFavoritesClick(movie)}>
         <FavoriteComponent/>
         </div>
-    </Card>
     </div>
     </div>
     </AppProvider>

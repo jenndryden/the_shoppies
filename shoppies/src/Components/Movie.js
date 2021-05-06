@@ -20,8 +20,6 @@ const Movie = (props) => {
     <AppProvider i18n={enTranslations}>
             <div className="movie">
             <div className="moviecard">
-              
-    <Card>
       
     <div className="movietext">
      <h1>{movie.Title}</h1>
@@ -39,7 +37,6 @@ const Movie = (props) => {
         onClick={() => props.handleFavoritesClick(movie)}>
         <FavoriteComponent/>
         </div>
-    </Card>
     </div>
     </div>
     </AppProvider>

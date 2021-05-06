@@ -5,6 +5,7 @@ import Movie from "./Movie";
 import Search from "./Search";
 import Nominations from "./Nominations";
 import NominationButton from "./NominationButton";
+import RemoveButton from "./RemoveButton";
 import '@shopify/polaris/dist/styles.css';
 import enTranslations from '@shopify/polaris/locales/en.json';
 import {AppProvider, Banner} from '@shopify/polaris';
@@ -98,6 +99,12 @@ const App = () => {
       }
     };
 
+    const removeNominatedMovie = (movie) => {
+      nominations_count--;
+      const newNominationList = nominations.filter((nomination) => nomination.imdbID !== movie.imdbID); 
+      setNominations(newNominationList); 
+    };
+
     return (
       <AppProvider>
     <div className="App">
@@ -121,7 +128,6 @@ const App = () => {
     <Banner
     title="Your have added a movie nomination"
     status="success"
-    onDismiss={() => {}}
   />
   ) :
   null}
@@ -155,8 +161,8 @@ const App = () => {
           <Nominations
           movies={nominations} 
           key={nominations.imdbID}
-          favoriteComponent={NominationButton} 
-          handleFavoritesClick={addNominatedMovie}
+          favoriteComponent={RemoveButton} 
+          handleFavoritesClick={removeNominatedMovie}
           /> 
         )} 
       </div>

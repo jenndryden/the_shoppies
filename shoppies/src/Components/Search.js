@@ -24,12 +24,14 @@ const Search = (props) => {
   return (
       <form className="search">
           <AppProvider i18n={enTranslations}>
+            <div class="rowSearch">
         <input
           value={searchValue}
           onChange={handleSearchInputChanges}
           type="text"
         />
         <Button onClick={callSearchFunction} type="submit" color="primary">Search</Button>
+        </div>
         </AppProvider>
       </form>
     );

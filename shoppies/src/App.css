@@ -1,10 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Hammersmith+One&display=swap');
+
 .App {
   text-align: center;
 }
 
 .App-header {
-  background-color: #282c34;
-  height: 70px;
+  background-color: #008060;
+  height: 80%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -62,9 +64,10 @@
 .search {
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
   justify-content: center;
   margin-top: 10px;
+  display: flex;
+  margin-bottom: 10px;
 }
 input{ 
 width: 100%;
@@ -92,13 +95,20 @@ input[type="submit"]:hover {
 }
 .moviecard {
   width: 300px;
-  padding: 5px 25px 10px 25px;
-  height: 200px;
+  padding: 2px 2px 2px 2px;
+  height: 180px;
+  background-color: white;
+  border: 1px solid rgb(173, 169, 169);
+border-radius: 0.5rem;
+box-shadow: 3px 3x 5px 3px #c9c7c7;
+margin:10px;
 }
 
 .movietext {
   width: 50%;
   float:right;
+  margin: auto;
+  padding:auto;
 }
 
 .movieimagecard {
@@ -108,13 +118,14 @@ input[type="submit"]:hover {
 
 
 .allMovies {
-  display: block;
-  width: 60%;
+  display: inline-block;
+  width: 55%;
 }
 
 .search > input[type="text"]{
   width: 40%;
   min-width: 170px;
+  display: inline-block;
 }
 
 @media screen and (min-width: 694px) and (max-width: 915px) {
@@ -137,6 +148,22 @@ input[type="submit"]:hover {
   }
 }
 
-.Polaris-Card {
-  height: 100% !important;
+.logo {
+  width: 40%;
+  height: auto;
+}
+
+h3, h4 {
+  font-family: 'Hammersmith One', sans-serif;
+}
+
+.nominatedMovies {
+  width: 35%;
+  float: right;
+  display:inline-block;
+  background-color: lightgrey;
+  margin: 2rem;
+  height: 1050px;
+  padding: 3rem;
+  border-radius: 1rem;
 }

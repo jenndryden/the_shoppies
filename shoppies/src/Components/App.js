@@ -5,10 +5,12 @@ import Movie from "./Movie";
 import Search from "./Search";
 import Nominations from "./Nominations";
 import NominationButton from "./NominationButton";
-
+import '@shopify/polaris/dist/styles.css';
+import enTranslations from '@shopify/polaris/locales/en.json';
+import {AppProvider, Banner} from '@shopify/polaris';
 
 const MOVIE_API_URL = "https://www.omdbapi.com/?s=nemo&apikey=4a3b711b";
-
+let nominations_count = 0;
 
 const initialState = {
   loading: true,
@@ -87,59 +89,80 @@ const App = () => {
     const [nominations, setNominations] = useState([]); 
 
     const addNominatedMovie = (movie) => {
-      const newNominationList = [...nominations, movie]; 
-      setNominations(newNominationList);
-      console.log("Added!");
-      console.log(newNominationList);
+      if (nominations_count<5){
+        nominations_count++
+        const newNominationList = [...nominations, movie]; 
+        setNominations(newNominationList);
+        console.log("Added!");
+        console.log(newNominationList);
+      }
     };
 
     return (
+      <AppProvider>
     <div className="App">
-      <Header text="The Shoppies" />
+      <Header/>
       <Search search={search}/>
+      {nominations_count === 5 ? (
+    <Banner 
+    title="You have already added 5 movies"
+    status="critical"
+  >
+    <p>
+      To add a different movie to the nominations, please{' '}
+      delete a movie nomination from the list and add
+      a new one.
+    </p>
+  </Banner>
+  ) : (
+    null
+  )}
+  {nominations_count>0 && nominations_count!==5 ? (
+    <Banner
+    title="Your have added a movie nomination"
+    status="success"
+    onDismiss={() => {}}
+  />
+  ) :
+  null}
       <div className="allMovies">
         <br></br>
-      <p className="App-intro">Nominate your favourite movies by pressing the heart!</p>
+      <h4 className="App-intro">movies to nominate</h4>
       <br></br>
-      {/* <div className="movies">
+      <div className="movies">
         {loading && !errorMessage ? (
           <span>loading... </span>
         ) : errorMessage ? (
           <div className="errorMessage">{errorMessage}</div>
         ) : (
-          movies.map((movie, index) => (
-            <Movie key={`${index}-${movie.Title}`} movie={movie}/>
-          ))
-        )} */}
-         <Movie 
-                      movies={movies}
-                      key={movies.imdbID}
-                      favoriteComponent={NominationButton} 
-                      handleFavoritesClick={addNominatedMovie}
-                      />
-      {/* </div> */}
+          <Movie 
+          movies={movies}
+          key={movies.imdbID}
+          favoriteComponent={NominationButton} 
+          handleFavoritesClick={addNominatedMovie}
+          />
+        )} 
+</div>
     </div>
     <div className="nominatedMovies">
-    <p className="App-intro">Nominated Movies</p>
+    <h4 className="App-intro">nominated movies</h4>
     <div className="movies">
-        {/* {(loading && !errorMessage) ? (
+        {(loading && !errorMessage) ? (
           <span>loading... </span>
         ) : errorMessage ? (
           <div className="errorMessage">{errorMessage}</div>
         ) : (
-          movies.map((movie, index) => (
-            <Nominations key={`${index}-${movie.Title}`} movie={movie}/>
-          ))
-        )} */}
-         <Nominations
-                movies={nominations} 
-                key={nominations.imdbID}
-                favoriteComponent={NominationButton} 
-                handleFavoritesClick={addNominatedMovie}
-                /> 
+          <Nominations
+          movies={nominations} 
+          key={nominations.imdbID}
+          favoriteComponent={NominationButton} 
+          handleFavoritesClick={addNominatedMovie}
+          /> 
+        )} 
       </div>
     </div>
     </div>
+    </AppProvider>
   );
 };
 

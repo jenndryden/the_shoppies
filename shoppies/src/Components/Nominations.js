@@ -8,7 +8,7 @@ import {AppProvider, Page, Card, Button} from '@shopify/polaris';
 
 
 // DEFAULT_PLACEHOLDER_IMAGE
-const poster =
+const DEFAULT_PLACEHOLDER_IMAGE =
   "https://m.media-amazon.com/images/M/MV5BMTczNTI2ODUwOF5BMl5BanBnXkFtZTcwMTU0NTIzMw@@._V1_SX300.jpg";
 
   // function nominateFunction(movie){
@@ -19,7 +19,7 @@ const poster =
   // }
 
 const Nominations = (props) => {
-    const FavoriteButton = props.favoriteButton;
+    const FavoriteComponent = props.favoriteComponent;
   // const [nominations, setNominations] = useState([]); 
 
   // const addNominatedMovie = (movie) => {
@@ -28,17 +28,19 @@ const Nominations = (props) => {
   //   console.log('test!!')
   // };
 
-//   const poster =
-//     props.movie.Poster === "N/A" ? DEFAULT_PLACEHOLDER_IMAGE : props.movie.Poster;
+
   return (
       <>
       { props.movies.map((movie,index) => { 
                 if (movie) {
+                    const poster =
+                    movie.Poster === "N/A" ? DEFAULT_PLACEHOLDER_IMAGE : movie.Poster;
                     return (
+                        
     <AppProvider i18n={enTranslations}>
             <div className="movie">
             <div className="moviecard">
-    <Card>
+            <Card>
     <div className="movietext">
      <h1>{movie.Title}</h1>
       <p>({movie.Year})</p>
@@ -51,13 +53,10 @@ const Nominations = (props) => {
           src={poster}
         />
         </div>
-        <div>
-        <div 
-                                onClick={() => props.handleFavoritesClick(movie)}>
-                                <FavoriteButton/>
-                                </div>
+        <div
+        onClick={() => props.handleFavoritesClick(movie)}>
+        <FavoriteComponent/>
         </div>
-        {/* <input type="submit" value="<3" onClick={() => movie.handleFavoritesClick(movie)}></input> */}
     </Card>
     </div>
     </div>

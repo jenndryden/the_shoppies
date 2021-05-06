@@ -1,11 +1,13 @@
-import React, { useReducer, useEffect } from "react";
+import React, { useReducer, useEffect, useState } from "react";
 import "../App.css";
 import Header from "./Header";
 import Movie from "./Movie";
 import Search from "./Search";
+import Nominations from "./Nominations";
+import NominationButton from "./NominationButton";
 
 
-const MOVIE_API_URL = "https://www.omdbapi.com/?s=man&apikey=4a3b711b";
+const MOVIE_API_URL = "https://www.omdbapi.com/?s=nemo&apikey=4a3b711b";
 
 
 const initialState = {
@@ -44,6 +46,7 @@ const reducer = (state, action) => {
 
 const App = () => {
   const [state, dispatch] = useReducer(reducer, initialState);
+  
 
     useEffect(() => {
     
@@ -63,7 +66,7 @@ const App = () => {
       	type: "SEARCH_MOVIES_REQUEST"
     	});
 	
-        fetch(`https://www.omdbapi.com/?s=${searchValue}&apikey=4a3b711b`)
+        fetch(`https://www.omdbapi.com/?s=${searchValue}&apikey=5107eb21`)
       	.then(response => response.json())
       	.then(jsonResponse => {
         	if (jsonResponse.Response === "True") {
@@ -81,23 +84,61 @@ const App = () => {
 	  };
 
     const { movies, errorMessage, loading } = state;
+    const [nominations, setNominations] = useState([]); 
+
+    const addNominatedMovie = (movie) => {
+      const newNominationList = [...nominations, movie]; 
+      setNominations(newNominationList);
+      console.log("Added!");
+      console.log(newNominationList);
+    };
 
     return (
     <div className="App">
       <Header text="The Shoppies" />
-      <Search search={search} />
-      <p className="App-intro">Nominate your favourite movies</p>
-      <div className="movies">
+      <Search search={search}/>
+      <div className="allMovies">
+        <br></br>
+      <p className="App-intro">Nominate your favourite movies by pressing the heart!</p>
+      <br></br>
+      {/* <div className="movies">
         {loading && !errorMessage ? (
           <span>loading... </span>
         ) : errorMessage ? (
           <div className="errorMessage">{errorMessage}</div>
         ) : (
           movies.map((movie, index) => (
-            <Movie key={`${index}-${movie.Title}`} movie={movie} />
+            <Movie key={`${index}-${movie.Title}`} movie={movie}/>
           ))
-        )}
+        )} */}
+         <Movie 
+                      movies={movies}
+                      key={movies.imdbID}
+                      favoriteComponent={NominationButton} 
+                      handleFavoritesClick={addNominatedMovie}
+                      />
+      {/* </div> */}
+    </div>
+    <div className="nominatedMovies">
+    <p className="App-intro">Nominated Movies</p>
+    <div className="movies">
+        {/* {(loading && !errorMessage) ? (
+          <span>loading... </span>
+        ) : errorMessage ? (
+          <div className="errorMessage">{errorMessage}</div>
+        ) : (
+          movies.map((movie, index) => (
+            <Nominations key={`${index}-${movie.Title}`} movie={movie}/>
+          ))
+        )} */}
+         <Nominations
+                movies={nominations} 
+                key={nominations.imdbID}
+                favoriteComponent={NominationButton} 
+                handleFavoritesClick={addNominatedMovie}
+                /> 
       </div>
+    </div>
     </div>
   );
 };

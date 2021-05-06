@@ -13,6 +13,8 @@
   color: white;
   padding: 20px;
   cursor: pointer;
+  border-radius: 1rem;
+  margin: 10px;
 }
 
 .spinner {
@@ -50,11 +52,6 @@
   margin: 0 10px 30px 10px;
 }
 
-.movie {
-  padding: 5px 25px 10px 25px;
-  max-width: 100%;
-}
-
 .errorMessage {
   margin: auto;
   font-weight: bold;
@@ -69,7 +66,14 @@
   justify-content: center;
   margin-top: 10px;
 }
-
+input{ 
+width: 100%;
+padding: 10px 20px;
+margin: 8px 0;
+box-sizing: border-box;
+border: 1px solid grey;
+border-radius: 0.5rem;
+}
 
 input[type="submit"] {
   padding: 5px;
@@ -86,7 +90,27 @@ input[type="submit"]:hover {
   background-color: #282c34;
   color: antiquewhite;
 }
+.moviecard {
+  width: 300px;
+  padding: 5px 25px 10px 25px;
+  height: 200px;
+}
 
+.movietext {
+  width: 50%;
+  float:right;
+}
+
+.movieimagecard {
+  float: left;
+  padding: 5px 5px 5px 5px;
+}
+
+
+.allMovies {
+  display: block;
+  width: 60%;
+}
 
 .search > input[type="text"]{
   width: 40%;
@@ -111,4 +135,8 @@ input[type="submit"]:hover {
     max-width: 100%;
     margin: auto;
   }
+}
+
+.Polaris-Card {
+  height: 100% !important;
 }

@@ -2,9 +2,10 @@ import React, {useState} from "react";
 import '@shopify/polaris/dist/styles.css';
 import enTranslations from '@shopify/polaris/locales/en.json';
 import {AppProvider, Page, Card, Button} from '@shopify/polaris';
+import unavailableMoviePoster from '../unavailableMoviePoster.jpg';
 
 const DEFAULT_PLACEHOLDER_IMAGE =
-  "https://m.media-amazon.com/images/M/MV5BMTczNTI2ODUwOF5BMl5BanBnXkFtZTcwMTU0NTIzMw@@._V1_SX300.jpg";
+unavailableMoviePoster;
 
 
 const Nominations = (props) => {
@@ -33,7 +34,7 @@ const Nominations = (props) => {
           src={poster}
         />
         </div>
-        <div
+        <div 
         onClick={() => props.handleFavoritesClick(movie)}>
         <FavoriteComponent/>
         </div>

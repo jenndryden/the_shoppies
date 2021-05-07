@@ -17,6 +17,7 @@
   cursor: pointer;
   border-radius: 1rem;
   margin: 10px;
+  padding-bottom: 40px;
 }
 
 .spinner {
@@ -114,6 +115,11 @@ margin:10px;
 .movieimagecard {
   float: left;
   padding: 5px 5px 5px 5px;
+  float: center;
+  display:flex;
+  align-items: center;
+  justify-content: space-around;
+  margin: auto;
 }
 
 
@@ -166,4 +172,20 @@ h3, h4 {
   height: 1050px;
   padding: 3rem;
   border-radius: 1rem;
+}
+
+.searchbutton {
+  background-color: grey;
+  height:40px;
+  width: 100px;
+  border-radius: 0.5rem;
+  border-style: none;
+  font-family: 'Hammersmith One', sans-serif;
+  color: white;
+  font-size: medium;
+}
+
+.searchbutton:hover {
+  background-color: #008060; /* Green */
+  color: white;
 }

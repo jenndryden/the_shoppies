@@ -1,21 +1,21 @@
-import React, {useState} from "react";
+import React, {useState, setState, isDisabled} from "react";
 import '@shopify/polaris/dist/styles.css';
 import enTranslations from '@shopify/polaris/locales/en.json';
 import {AppProvider, Page, Card, Button} from '@shopify/polaris';
 import NominationButton from './NominationButton';
+import unavailableMoviePoster from '../unavailableMoviePoster.jpg';
 
 const DEFAULT_PLACEHOLDER_IMAGE =
-  "https://m.media-amazon.com/images/M/MV5BMTczNTI2ODUwOF5BMl5BanBnXkFtZTcwMTU0NTIzMw@@._V1_SX300.jpg";
+  unavailableMoviePoster;
 
-const Movie = (props) => {
+const Movie = (props, {disabled})  => {
   
+  const [disable, setDisable] = useState(false);
   const FavoriteComponent = props.favoriteComponent;
-
   return (
     <>
     
     {props.movies && props.movies.map((movie =>  (
-      
 
     <AppProvider i18n={enTranslations}>
             <div className="movie">
@@ -33,9 +33,9 @@ const Movie = (props) => {
           src={movie.Poster === "N/A" ? DEFAULT_PLACEHOLDER_IMAGE : movie.Poster}
         />
         </div>
-        <div
+        <div 
         onClick={() => props.handleFavoritesClick(movie)}>
-        <FavoriteComponent/>
+        <button disabled={disabled} type="submit" >💚</button> 
         </div>
     </div>
     </div>

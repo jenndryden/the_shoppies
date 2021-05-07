@@ -12,7 +12,6 @@ import {AppProvider, Banner} from '@shopify/polaris';
 
 const MOVIE_API_URL = "https://www.omdbapi.com/?s=nemo&apikey=4a3b711b";
 let nominations_count = 0;
-
 const initialState = {
   loading: true,
   movies: [],
@@ -47,7 +46,8 @@ const reducer = (state, action) => {
 
 
 
-const App = () => {
+const App = (
+) => {
   const [state, dispatch] = useReducer(reducer, initialState);
   
 
@@ -90,12 +90,10 @@ const App = () => {
     const [nominations, setNominations] = useState([]); 
 
     const addNominatedMovie = (movie) => {
-      if (nominations_count<5){
+      if ((nominations_count<5) && (!nominations.includes(movie))){ 
         nominations_count++
         const newNominationList = [...nominations, movie]; 
         setNominations(newNominationList);
-        console.log("Added!");
-        console.log(newNominationList);
       }
     };
 
@@ -146,6 +144,7 @@ const App = () => {
           key={movies.imdbID}
           favoriteComponent={NominationButton} 
           handleFavoritesClick={addNominatedMovie}
+          disabled={(nominations.includes(movies))}
           />
         )} 
 </div>

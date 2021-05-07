@@ -1,9 +1,11 @@
-import React from 'react';
+import React, {useState} from 'react';
+import enTranslations from '@shopify/polaris/locales/en.json';
+
 
 const NominationButton = (props) => {
 	return (
 		<>
-			<input type="submit" value={`💚`}></input>
+			<button type="submit" value={`💚`}>💚</button>
 		</>
 	);
 };

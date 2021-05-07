@@ -1,5 +1,6 @@
 {
   "name": "shoppies",
+  "homepage": "/React",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

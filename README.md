@@ -8,31 +8,117 @@
 # the_shoppies
 Shopify Fall 2021 Frontend Developer Intern Challenge
 
-![Image of The Shoppies Banner](https://i.postimg.cc/qqdpqZBX/Screen-Shot-2021-05-06-at-8-07-18-PM.png)
+![Image of The Shoppies Banner](https://i.postimg.cc/8zc4Frhn/Screen-Shot-2021-05-06-at-8-07-18-PM.png)
 
-# About the Project
-## Built With 
-###### Design Elements
+<!-- TABLE OF CONTENTS -->
+<details open="open">
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#about-the-project">About The Project</a>
+      <ul>
+        <li><a href="#built-with">Built With</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#getting-started">Getting Started</a>
+      <ul>
+        <li><a href="#prerequisites">Prerequisites</a></li>
+        <li><a href="#installation">Installation</a></li>
+      </ul>
+    </li>
+    <li><a href="#contributing">Contributing</a></li>
+    <li><a href="#license">License</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ol>
+</details>
+
+## About the Project
+
+This project was created for the Shopify Frontend Developer intern challenge. This webpage searches OMDB for movies, and allows the user to save their favourite films they feel should be up for nomination. 
+
 ![Image of The Shoppies Website](https://i.postimg.cc/DyQ1v8dR/Screen-Shot-2021-05-07-at-5-22-28-PM.png)
 ![Shoppies Mobile View](https://i.postimg.cc/nLrmGTbt/Screen-Shot-2021-05-07-at-5-30-37-PM.png)
 
-###### Why?
+## Built With 
+
+This webpage was created using React.js and JavaScript, HTML, CSS. 
+
+###### Design Elements
+
+The webpage also uses Shopify Polaris components and colours to maintain colour consistency and fluency. 
+Designs were created using Figma, Illustrator, and Rotato. 
   
-# Getting Started
-## Prerequisites
-## Installation
+## Getting Started
 
-# Getting Started
+![Shoppies Laptop Design View](https://i.postimg.cc/MpdRBNLD/Screen-Shot-2021-05-07-at-5-43-28-PM.png)
 
-# Usage
+To get a local copy up and running follow these simple example steps.
 
-# Roadmap
+### Prerequisites
 
-# Contributing
+To install this project, please install npm on your device
+* npm
+  ```sh
+  npm install npm@latest -g
+  ```
 
-# License
+### Installation
 
-# Contact
+1. Clone the repo in your desired folder
+   ```sh
+   git clone git clone https://github.com/jenndryden/the_shoppies.git
+   ```
+2. Enter the folder
+
+   ```
+   cd the shoppies
+   ```
+   
+3. Install NPM packages
+   ```sh
+   npm install
+   ```
+   
+4. Run the development environment 
+
+   ```
+   npm run start
+   ```
+   
+OPTIONAL
+
+1. Get a free custom OMBD API Key at [https://www.omdbapi.com/](https://www.omdbapi.com/) 
+
+2. Enter your API in `App.js`
+`const API_KEY = "YOUR API KEY HERE";`
+
+
+![Shoppies Web Mockup View](https://i.postimg.cc/VkYndmKv/Screen-Shot-2021-05-07-at-5-32-46-PM.png)
+
+## Contributing
+
+Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## License
+
+Distributed under the MIT License. See `LICENSE` for more information.
+
+## Contact
+
+Feel free to get in touch with me if you'd like to chat about the project!
+
+Jennifer Dryden - [@jenndryden](https://twitter.com/jenndryden) 
+
+Project Link: [https://github.com/jenndryden/the_shoppies](https://github.com/jenndryden/the_shoppies)
+
+This READ.ME was inspired by [othneildrew/Best-README-Template](https://github.com/othneildrew/Best-README-Template)
 
 [contributors-shield]: https://img.shields.io/github/contributors/jenndryden/the_shoppies.svg?style=for-the-badge
 [contributors-url]: https://github.com/jenndryden/the_shoppies/graphs/contributors

@@ -3,6 +3,7 @@ import '@shopify/polaris/dist/styles.css';
 import enTranslations from '@shopify/polaris/locales/en.json';
 import {Banner} from '@shopify/polaris';
 
+//banner for when there are no remaining nominations left
 const NoNominationsBanner = ({available}) => {
     if (!available) return null;
 	return (

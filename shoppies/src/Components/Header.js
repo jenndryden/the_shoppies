@@ -1,6 +1,7 @@
 import React from "react";
 import theshoppieslogo from './theshoppieslogo.png';
 
+//main header for the application, includes logo image and slogan
 const Header = (props) => {
   return (
     <header className="App-header">

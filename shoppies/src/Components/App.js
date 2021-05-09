@@ -10,15 +10,19 @@ import '@shopify/polaris/dist/styles.css';
 import enTranslations from '@shopify/polaris/locales/en.json';
 import {AppProvider, Banner} from '@shopify/polaris';
 
-const MOVIE_API_URL = "https://www.omdbapi.com/?s=nemo&apikey=4a3b711b";
+//api key information -- enter your own custom key below if you'd like!
+const API_KEY = "5107eb21";
+const MOVIE_API_URL = `https://www.omdbapi.com/?s=nemo&apikey=${API_KEY}`;
 let nominations_count = 0;
+
+//inital state for creating array of movies for api calls
 const initialState = {
   loading: true,
   movies: [],
   errorMessage: null
 };
 
-
+//cases for api calls
 const reducer = (state, action) => {
   switch (action.type) {
     case "SEARCH_MOVIES_REQUEST":
@@ -52,7 +56,7 @@ const App = (
   
 
     useEffect(() => {
-    
+        //setting payload as json search response for successful api call 
         fetch(MOVIE_API_URL)
             .then(response => response.json())
             .then(jsonResponse => {
@@ -69,7 +73,7 @@ const App = (
       	type: "SEARCH_MOVIES_REQUEST"
     	});
 	
-        fetch(`https://www.omdbapi.com/?s=${searchValue}&apikey=5107eb21`)
+        fetch(`https://www.omdbapi.com/?s=${searchValue}&apikey=${API_KEY}`)
       	.then(response => response.json())
       	.then(jsonResponse => {
         	if (jsonResponse.Response === "True") {
@@ -77,7 +81,7 @@ const App = (
                 type: "SEARCH_MOVIES_SUCCESS",
                 payload: jsonResponse.Search
           	});
-        	} else {
+        	} else { //for api call errors
           	dispatch({
                 type: "SEARCH_MOVIES_FAILURE",
                 error: jsonResponse.Error
@@ -89,19 +93,22 @@ const App = (
     const { movies, errorMessage, loading } = state;
     const [nominations, setNominations] = useState([]); 
 
-    const addNominatedMovie = (movie) => {
+    //this function is for adding new nominated movies to the nominated movie array
+    const additionNominatedMovies = (movie) => {
       if ((nominations_count<5) && (!nominations.includes(movie))){ 
-        nominations_count++
+        nominations_count++ //increases count of nominations, cannot be more than 5
         const newNominationList = [...nominations, movie]; 
         setNominations(newNominationList);
       }
     };
 
-    const removeNominatedMovie = (movie) => {
-      nominations_count--;
+    //function for removing movies from the nominated movies array
+    const removalNominatedMovie = (movie) => {
+      nominations_count--; // decreases movie count
       const newNominationList = nominations.filter((nomination) => nomination.imdbID !== movie.imdbID); 
       setNominations(newNominationList); 
     };
+
 
     return (
       <AppProvider>
@@ -109,6 +116,7 @@ const App = (
       <Header/>
       <Search search={search}/>
       {nominations_count === 5 ? (
+        //banner that is displayed when there is already 5 movies
     <Banner 
     title="You have already added 5 movies"
     status="critical"
@@ -142,15 +150,13 @@ const App = (
           <Movie 
           movies={movies}
           key={movies.imdbID}
-          favoriteComponent={NominationButton} 
-          handleFavoritesClick={addNominatedMovie}
-          disabled={(nominations.includes(movies))}
+          handleNominationClick={additionNominatedMovies}
           />
         )} 
 </div>
     </div>
     <div className="nominatedMovies">
-    <h4 className="App-intro">nominated movies</h4>
+    <h4 className="App-intro">nominated movies</h4> 
     <div className="movies">
         {(loading && !errorMessage) ? (
           <span>loading... </span>
@@ -160,8 +166,8 @@ const App = (
           <Nominations
           movies={nominations} 
           key={nominations.imdbID}
-          favoriteComponent={RemoveButton} 
-          handleFavoritesClick={removeNominatedMovie}
+          removeButtonComponent={RemoveButton} 
+          handleNominationClick={removalNominatedMovie}
           /> 
         )} 
       </div>

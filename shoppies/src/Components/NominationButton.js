@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import enTranslations from '@shopify/polaris/locales/en.json';
 
-
+// button for nominating movies
 const NominationButton = (props) => {
 	return (
 		<>

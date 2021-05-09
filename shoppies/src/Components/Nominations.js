@@ -4,12 +4,13 @@ import enTranslations from '@shopify/polaris/locales/en.json';
 import {AppProvider, Page, Card, Button} from '@shopify/polaris';
 import unavailableMoviePoster from '../unavailableMoviePoster.jpg';
 
+//placeholder image for when there is no movie available (green image with text)
 const DEFAULT_PLACEHOLDER_IMAGE =
 unavailableMoviePoster;
 
-
+// nomination function, takes all results from nominated array and maps them
 const Nominations = (props) => {
-    const FavoriteComponent = props.favoriteComponent;
+    const RemoveButtonComponent = props.removeButtonComponent;
 
   return (
       <>
@@ -35,14 +36,14 @@ const Nominations = (props) => {
         />
         </div>
         <div 
-        onClick={() => props.handleFavoritesClick(movie)}>
-        <FavoriteComponent/>
+        onClick={() => props.handleNominationClick(movie)}>
+        <RemoveButtonComponent/>
         </div>
     </div>
     </div>
     </AppProvider>
-                    )} return null
-                    })}
+    )} return null
+      })}
 </>
   );
 };

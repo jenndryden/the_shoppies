@@ -5,16 +5,16 @@ import {AppProvider, Page, Card, Button} from '@shopify/polaris';
 import NominationButton from './NominationButton';
 import unavailableMoviePoster from '../unavailableMoviePoster.jpg';
 
+//placeholder image for when there is no movie available (green image with text)
 const DEFAULT_PLACEHOLDER_IMAGE =
   unavailableMoviePoster;
 
-const Movie = (props, {disabled})  => {
+  //this function maps all the search results from the api and displays the movies in a card
+const Movie = (props)  => {
   
   const [disable, setDisable] = useState(false);
-  const FavoriteComponent = props.favoriteComponent;
   return (
     <>
-    
     {props.movies && props.movies.map((movie =>  (
 
     <AppProvider i18n={enTranslations}>
@@ -34,8 +34,8 @@ const Movie = (props, {disabled})  => {
         />
         </div>
         <div 
-        onClick={() => props.handleFavoritesClick(movie)}>
-        <button disabled={disabled} type="submit" >💚</button> 
+        onClick={() => props.handleNominationClick(movie)}>
+        <button disabled={props.disable} onClick={() => setDisable(true)} type="submit" >💚</button> 
         </div>
     </div>
     </div>

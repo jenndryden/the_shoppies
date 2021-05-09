@@ -112,7 +112,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 ## Contact
 
-Feel free to get in touch with me if you'd like to chat about the project!
+Feel free to get in touch with me if you'd like to chat about the project! Also feel free to get in touch with me if you love to talk about [Gitmojis](https://gitmoji.dev/) (emoji commits) 😊
 
 Jennifer Dryden - [@jenndryden](https://twitter.com/jenndryden) 
 
@@ -128,7 +128,5 @@ This READ.ME was inspired by [othneildrew/Best-README-Template](https://github.c
 [stars-url]: https://github.com/jenndryden/the_shoppies/stargazers
 [issues-shield]: https://img.shields.io/github/issues/jenndryden/the_shoppies.svg?style=for-the-badge
 [issues-url]: https://github.com/jenndryden/the_shoppies/issues
-[license-shield]: https://img.shields.io/github/license/jenndryden/the_shoppies.svg?style=for-the-badge
-[license-url]: https://github.com/jenndryden/the_shoppies/blob/main/LICENSE
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/jennifer-dryden

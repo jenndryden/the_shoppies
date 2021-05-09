@@ -129,6 +129,6 @@ This READ.ME was inspired by [othneildrew/Best-README-Template](https://github.c
 [issues-shield]: https://img.shields.io/github/issues/jenndryden/the_shoppies.svg?style=for-the-badge
 [issues-url]: https://github.com/jenndryden/the_shoppies/issues
 [license-shield]: https://img.shields.io/github/license/jenndryden/the_shoppies.svg?style=for-the-badge
-[license-url]: https://github.com/jenndryden/the_shoppies/blob/master/LICENSE.txt
+[license-url]: https://github.com/jenndryden/the_shoppies/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/jennifer-dryden

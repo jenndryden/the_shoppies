@@ -7,7 +7,7 @@
 # the_shoppies
 Shopify Fall 2021 Frontend Developer Intern Challenge
 
-![Image of The Nothin' But Nasa Banner](https://i.postimg.cc/pTrsbFnd/Screen-Shot-2022-01-13-at-1-35-48-PM.png)
+![Image of The Shoppies Banner](https://i.postimg.cc/8zc4Frhn/Screen-Shot-2021-05-06-at-8-07-18-PM.png)
 
 <!-- TABLE OF CONTENTS -->
 <details open="open">
@@ -34,10 +34,10 @@ Shopify Fall 2021 Frontend Developer Intern Challenge
 
 ## About the Project
 
-This project was created for the Shopify Frontend Developer intern challenge. This webpage searches the NASA API for NASA space photos, and allows the user to save their favourite space photos. As someone who loves to take photos of stars, I love seeing all the galaxy photos! 
+This project was created for the Shopify Frontend Developer intern challenge. This webpage searches OMDB for movies, and allows the user to save their favourite films they feel should be up for nomination. 
 
-![Image of Nothin But Nasa Website](https://i.postimg.cc/x1rpJ5XD/Screen-Shot-2022-01-13-at-2-09-07-PM.png)
-![Nothin But Nasa Mobile View](https://i.postimg.cc/G2pXwS5Y/Screen-Shot-2022-01-13-at-2-10-54-PM.png)
+![Image of The Shoppies Website](https://i.postimg.cc/DyQ1v8dR/Screen-Shot-2021-05-07-at-5-22-28-PM.png)
+![Shoppies Mobile View](https://i.postimg.cc/nLrmGTbt/Screen-Shot-2021-05-07-at-5-30-37-PM.png)
 
 ## Built With 
 
@@ -50,7 +50,7 @@ Designs were created using Figma, Illustrator, and Rotato.
   
 ## Getting Started
 
-![Nothin But Nasa Laptop Design View](https://i.postimg.cc/FFwXpjYG/Screen-Shot-2022-01-13-at-2-07-19-PM.png)
+![Shoppies Laptop Design View](https://i.postimg.cc/MpdRBNLD/Screen-Shot-2021-05-07-at-5-43-28-PM.png)
 
 To get a local copy up and running follow these simple example steps.
 
@@ -66,12 +66,12 @@ To install this project, please install npm on your device
 
 1. Clone the repo in your desired folder
    ```sh
-   git clone git clone https://github.com/jenndryden/nothin-but-nasa.git
+   git clone git clone https://github.com/jenndryden/the_shoppies.git
    ```
 2. Enter the folder
 
    ```
-   cd code-challenge
+   cd the shoppies
    ```
    
 3. Install NPM packages
@@ -87,13 +87,13 @@ To install this project, please install npm on your device
    
 OPTIONAL
 
-1. Get a free custom NASA API Key at [https://api.nasa.gov/](https://api.nasa.gov/) 
+1. Get a free custom OMBD API Key at [https://www.omdbapi.com/](https://www.omdbapi.com/) 
 
 2. Enter your API in `App.js`
 `const API_KEY = "YOUR API KEY HERE";`
 
 
-![Nothin But Nasa Web Mockup View](https://i.postimg.cc/15W6b3ZW/Screen-Shot-2022-01-13-at-2-19-00-PM.png)
+![Shoppies Web Mockup View](https://i.postimg.cc/VkYndmKv/Screen-Shot-2021-05-07-at-5-32-46-PM.png)
 
 ## Contributing
 
@@ -115,17 +115,17 @@ Feel free to get in touch with me if you'd like to chat about the project! Also 
 
 Jennifer Dryden - [@jenndryden](https://twitter.com/jenndryden) 
 
-Project Link: [https://github.com/jenndryden/nothin-but-nasa](https://github.com/jenndryden/the_shoppies)
+Project Link: [https://github.com/jenndryden/the_shoppies](https://github.com/jenndryden/the_shoppies)
 
 This READ.ME was inspired by [othneildrew/Best-README-Template](https://github.com/othneildrew/Best-README-Template)
 
-[contributors-shield]: https://img.shields.io/github/contributors/jenndryden/nothin-but-nasa.svg?style=for-the-badge
-[contributors-url]: https://github.com/jenndryden/nothin-but-nasa/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/jenndryden/nothin-but-nasa.svg?style=for-the-badge
-[forks-url]: https://github.com/jenndryden/nothin-but-nasa/network/members
-[stars-shield]: https://img.shields.io/github/stars/jenndryden/nothin-but-nasa.svg?style=for-the-badge
-[stars-url]: https://github.com/jenndryden/nothin-but-nasa/stargazers
-[issues-shield]: https://img.shields.io/github/issues/jenndryden/nothin-but-nasa.svg?style=for-the-badge
-[issues-url]: https://github.com/jenndryden/nothin-but-nasa/issues
+[contributors-shield]: https://img.shields.io/github/contributors/jenndryden/the_shoppies.svg?style=for-the-badge
+[contributors-url]: https://github.com/jenndryden/the_shoppies/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/jenndryden/the_shoppies.svg?style=for-the-badge
+[forks-url]: https://github.com/jenndryden/the_shoppies/network/members
+[stars-shield]: https://img.shields.io/github/stars/jenndryden/the_shoppies.svg?style=for-the-badge
+[stars-url]: https://github.com/jenndryden/the_shoppies/stargazers
+[issues-shield]: https://img.shields.io/github/issues/jenndryden/the_shoppies.svg?style=for-the-badge
+[issues-url]: https://github.com/jenndryden/the_shoppies/issues
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/jennifer-dryden
